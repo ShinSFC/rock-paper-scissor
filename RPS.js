@@ -1,17 +1,18 @@
-const playerSelection = "rock";
-let myArray = [
+const computerChoiceArray = [
     "Rock",
     "Paper",
     "Scissors",
 ]
 
 function getComputerChoice() {
-    return myArray[Math.floor(Math.random() * myArray.length)]
+    return computerChoiceArray[Math.floor(Math.random() * computerChoiceArray.length)]
 }
 
-const computerSelection = getComputerChoice()
+let computerSelection = getComputerChoice()
 console.log(computerSelection)
 
-function playRound( playerSelection, computerSelection) {
-    return "You Lose! Paper beats Rock" 
-}
+// function playRound( playerSelection, computerSelection) {
+//     if (playerSelection == computerChoice) {
+//         console.log( "You tie!")
+//     elsif (playerSelection == 
+// }
