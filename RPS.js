@@ -16,9 +16,14 @@ var humanScore = 0
 var computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
-    getHumanChoice()
-    console.log(humanChoice)
+    // switch (humanChoice) {
+   
 }
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(getHumanChoice, getComputerChoice)
 
 
 
