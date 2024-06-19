@@ -9,7 +9,14 @@ function getComputerChoice() {
 }
 
 let computerSelection = getComputerChoice()
-console.log(computerSelection)
+// console.log(computerSelection) this works
+
+function getHumanChoice() {
+    return prompt("Type rock, paper or scissor:")
+}
+
+let humanChoice = getHumanChoice()
+console.log(humanChoice)
 
 // function playRound( playerSelection, computerSelection) {
 //     if (playerSelection == computerChoice) {
