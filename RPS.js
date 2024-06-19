@@ -1,25 +1,28 @@
 const computerChoiceArray = [
-    "Rock",
-    "Paper",
-    "Scissors",
+    "rock",
+    "paper",
+    "scissors",
 ]
 
 function getComputerChoice() {
     return computerChoiceArray[Math.floor(Math.random() * computerChoiceArray.length)]
 }
 
-let computerSelection = getComputerChoice()
-// console.log(computerSelection) this works
+let computerChoice = getComputerChoice()
+// console.log(computerChoice) this works
 
 function getHumanChoice() {
     return prompt("Type rock, paper or scissor:")
 }
 
-let humanChoice = getHumanChoice()
-console.log(humanChoice)
+let humanChoice = getHumanChoice() //this invokes getHumanChoice()
+// console.log(humanChoice)
 
-// function playRound( playerSelection, computerSelection) {
-//     if (playerSelection == computerChoice) {
-//         console.log( "You tie!")
-//     elsif (playerSelection == 
-// }
+var humanScore = 0
+var computerScore = 0
+
+function playRound(humanChoice, computerChoice) {
+    getHumanChoice()
+    console.log(humanChoice)
+}
+
