@@ -17,27 +17,27 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase(); // this works
-    console.log(humanChoice);
-    console.log(computerChoice);
+    console.log(`Human: ${humanChoice}`);
+    console.log(`Computer: ${computerChoice}`);
     if (humanChoice == computerChoice) {
         console.log("Tie!"); // this works
     } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
-        console.log("You lose!");
+        console.log("You lose! Paper beats rock!");
         ++computerScore;
     } else if ((humanChoice == "rock") && (computerChoice == "scissors")) {
-        console.log("You win!");
+        console.log("You win! Rock beats scissors!");
         ++humanScore; 
     } else if ((humanChoice == "paper") && (computerChoice == "scissors")) {
-        console.log("You Lose!");
+        console.log("You Lose! Scissors beats paper!");
         ++computerScore;
     } else if ((humanChoice == "paper") && (computerChoice == "rock")) {
-        console.log("You win!"); 
+        console.log("You win! Paper beats rock!"); 
         ++humanScore;
     } else if ((humanChoice == "scissors") && (computerChoice == "rock")) {
-        console.log("You lose!");
+        console.log("You lose! Rock beats scissors!");
         ++computerScore;
     } else if ((humanChoice == "scissors") && (computerChoice == "paper")) {
-        console.log("You win!");
+        console.log("You win! Scissors beats paper!");
         ++humanScore;
     }
 }
