@@ -9,7 +9,7 @@ function getComputerChoice() {
 } //this works
 
 function getHumanChoice() {
-    return prompt("Type rock, paper or scissor:");
+    return prompt("Type rock, paper or scissors:");
 } // this works
 
 let humanScore = 0;
@@ -20,7 +20,7 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Human: ${humanChoice}`);
     console.log(`Computer: ${computerChoice}`);
     if (humanChoice == computerChoice) {
-        console.log("Tie!"); // this works
+        console.log("Tie!"); // this works  
     } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
         console.log("You lose! Paper beats rock!");
         ++computerScore;
@@ -40,14 +40,17 @@ function playRound(humanChoice, computerChoice) {
         console.log("You win! Scissors beats paper!");
         ++humanScore;
     }
+    console.log(`My score is ${humanScore}`)
+    console.log(`Computer score is ${computerScore}`)
 }
 
-const humanSelection = getHumanChoice(); //this works
-const computerSelection = getComputerChoice(); //this works
+const humanSelection = getHumanChoice(); 
+const computerSelection = getComputerChoice(); 
 
+// playRound(getHumanChoice, getComputerChoice); this doesn't work. I an guessin the playRound function needs the return values of functions assigned to variables
 playRound(humanSelection, computerSelection);
-console.log(`My score is ${humanScore}`); 
-console.log(`Computer score is ${computerScore}`);
+// console.log(`My score is ${humanScore}`); 
+// console.log(`Computer score is ${computerScore}`);
 
 
 
