@@ -12,8 +12,8 @@ function getHumanChoice() {
     return prompt("Type rock, paper or scissor:")
 } // this works
 
-var humanScore = 0
-var computerScore = 0
+let humanScore = 0
+let computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase() // this works
@@ -23,16 +23,22 @@ function playRound(humanChoice, computerChoice) {
         console.log("Tie!") // this works
     } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
         console.log("You lose!")
+        ++computerScore 
     } else if ((humanChoice == "rock") && (computerChoice == "scissors")) {
         console.log("You win!")
+        ++humanScore 
     } else if ((humanChoice == "paper") && (computerChoice == "scissors")) {
         console.log("You Lose!")
+        ++computerScore
     } else if ((humanChoice == "paper") && (computerChoice == "rock")) {
-        console.log("You win!") // works till this point
-    } else if ((humanChoice == "scissors") && (computerChoice == "paper")) {
-        console.log("You lose!")
+        console.log("You win!") 
+        ++humanScore
     } else if ((humanChoice == "scissors") && (computerChoice == "rock")) {
+        console.log("You lose!")
+        ++computerScore
+    } else if ((humanChoice == "scissors") && (computerChoice == "paper")) {
         console.log("You win!")
+        ++humanScore
     }
 }
 
@@ -40,6 +46,8 @@ const humanSelection = getHumanChoice() //this works
 const computerSelection = getComputerChoice() //this works
 
 playRound(humanSelection, computerSelection)
+console.log(`My score is ${humanScore}`) 
+console.log(`Comouter score is ${computerScore}`)
 
 
 
