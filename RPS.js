@@ -2,52 +2,52 @@ const computerChoiceArray = [
     "rock",
     "paper",
     "scissors",
-]
+];
 
 function getComputerChoice() {
-    return computerChoiceArray[Math.floor(Math.random() * computerChoiceArray.length)]
+    return computerChoiceArray[Math.floor(Math.random() * computerChoiceArray.length)];
 } //this works
 
 function getHumanChoice() {
-    return prompt("Type rock, paper or scissor:")
+    return prompt("Type rock, paper or scissor:");
 } // this works
 
-let humanScore = 0
-let computerScore = 0
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase() // this works
-    console.log(humanChoice)
-    console.log(computerChoice)
+    humanChoice = humanChoice.toLowerCase(); // this works
+    console.log(humanChoice);
+    console.log(computerChoice);
     if (humanChoice == computerChoice) {
-        console.log("Tie!") // this works
+        console.log("Tie!"); // this works
     } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
-        console.log("You lose!")
-        ++computerScore 
+        console.log("You lose!");
+        ++computerScore;
     } else if ((humanChoice == "rock") && (computerChoice == "scissors")) {
-        console.log("You win!")
-        ++humanScore 
+        console.log("You win!");
+        ++humanScore; 
     } else if ((humanChoice == "paper") && (computerChoice == "scissors")) {
-        console.log("You Lose!")
-        ++computerScore
+        console.log("You Lose!");
+        ++computerScore;
     } else if ((humanChoice == "paper") && (computerChoice == "rock")) {
-        console.log("You win!") 
-        ++humanScore
+        console.log("You win!"); 
+        ++humanScore;
     } else if ((humanChoice == "scissors") && (computerChoice == "rock")) {
-        console.log("You lose!")
-        ++computerScore
+        console.log("You lose!");
+        ++computerScore;
     } else if ((humanChoice == "scissors") && (computerChoice == "paper")) {
-        console.log("You win!")
-        ++humanScore
+        console.log("You win!");
+        ++humanScore;
     }
 }
 
-const humanSelection = getHumanChoice() //this works
-const computerSelection = getComputerChoice() //this works
+const humanSelection = getHumanChoice(); //this works
+const computerSelection = getComputerChoice(); //this works
 
-playRound(humanSelection, computerSelection)
-console.log(`My score is ${humanScore}`) 
-console.log(`Comouter score is ${computerScore}`)
+playRound(humanSelection, computerSelection);
+console.log(`My score is ${humanScore}`); 
+console.log(`Computer score is ${computerScore}`);
 
 
 
