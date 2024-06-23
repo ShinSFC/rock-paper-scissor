@@ -6,21 +6,21 @@ const computerChoiceArray = [
 
 function getComputerChoice() {
     return computerChoiceArray[Math.floor(Math.random() * computerChoiceArray.length)];
-} //this works
+} 
 
 function getHumanChoice() {
     return prompt("Type rock, paper or scissors:");
-} // this works
+} 
 
 function playGame() {
 
-    let humanScore = 0;
-    let computerScore = 0;
-
-    function playRound(humanChoice, computerChoice) {
-        humanChoice = humanChoice.toLowerCase(); // this works
+    function playRound() {
+        let humanChoice = getHumanChoice(); // this works
+        let computerChoice = getComputerChoice();
+        humanChoice = humanChoice.toLowerCase();
         console.log(`Human: ${humanChoice}`);
         console.log(`Computer: ${computerChoice}`);
+
         if (humanChoice == computerChoice) {
             console.log("Tie!"); // this works  
         } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
@@ -42,21 +42,23 @@ function playGame() {
             console.log("You win! Scissors beats paper!");
             ++humanScore;
         }
+
         console.log(`My score is ${humanScore}`)
         console.log(`Computer score is ${computerScore}`)
-    }
+    }   
+    // console.log(`My score is ${humanScore}`)
+    // console.log(`Computer score is ${computerScore}`)
+    let humanScore = 0;
+    let computerScore = 0;
+    // let humanSelection = getHumanChoice(); 
+    // let computerSelection = getComputerChoice(); 
 
-
-    const humanSelection = getHumanChoice(); 
-    const computerSelection = getComputerChoice(); 
-
-// playRound(getHumanChoice, getComputerChoice); this doesn't work. I an guessin the playRound function needs the return values of functions assigned to variables
-playRound(humanSelection, computerSelection);
-// console.log(`My score is ${humanScore}`); 
-// console.log(`Computer score is ${computerScore}`);
-
+    [1, 2, 3, 4, 5].forEach(playRound);
+    
+    // console.log(`My score is: ${humanScore}`);
+    // console.log(`Computer score is: ${computerScore}`);
 }
-// get function playGame to run once
-// then get function playGame to run 5 times
 
 playGame()
+
+// [1, 2, 3, 4, 5].forEach(playGame) // this works but score will not increase
