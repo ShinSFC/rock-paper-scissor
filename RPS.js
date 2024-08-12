@@ -12,10 +12,10 @@ function getHumanChoice() {
     return prompt("Type rock, paper or scissors:");
 } 
 
-function playGame() {
+// function playGame(humanChoice) {
 
-    function playRound() {
-        let humanChoice = getHumanChoice(); // this works
+    function playRound(humanChoice) {
+        // let humanChoice = getHumanChoice(); // this works
         let computerChoice = getComputerChoice();
         humanChoice = humanChoice.toLowerCase();
         console.log(`Human: ${humanChoice}`);
@@ -46,19 +46,36 @@ function playGame() {
         console.log(`My score is ${humanScore}`)
         console.log(`Computer score is ${computerScore}`)
     }   
-    // console.log(`My score is ${humanScore}`)
-    // console.log(`Computer score is ${computerScore}`)
+
     let humanScore = 0;
     let computerScore = 0;
-    // let humanSelection = getHumanChoice(); 
-    // let computerSelection = getComputerChoice(); 
 
-    [1, 2, 3, 4, 5].forEach(playRound);
-    
-    // console.log(`My score is: ${humanScore}`);
-    // console.log(`Computer score is: ${computerScore}`);
-}
+    // [1, 2, 3, 4, 5].forEach(playRound); Removed per instructions
+// }
 
-playGame()
+const game = document.querySelector("div");
+const paperBtn = document.createElement("button");
+const rockBtn = document.createElement("button");
+const scissorsBtn = document.createElement("button");
 
-// [1, 2, 3, 4, 5].forEach(playGame) // this works but score will not increase
+game.appendChild(paperBtn);
+game.appendChild(rockBtn);
+game.appendChild(scissorsBtn);
+
+paperBtn.textContent = "Paper";
+rockBtn.textContent = "Rock";
+scissorsBtn.textContent = "Scissors";
+
+paperBtn.addEventListener("click", () => {
+    playRound("paper");
+});
+rockBtn.addEventListener("click", () => {
+    playRound("rock");
+});
+scissorsBtn.addEventListener("click", () => {
+    playRound("scissors");
+});
+
+// playGame() // this is from 1st iteration
+
+
