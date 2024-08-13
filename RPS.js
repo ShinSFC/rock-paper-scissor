@@ -12,12 +12,12 @@ function getHumanChoice() {
     return prompt("Type rock, paper or scissors:");
 } 
 
-// function playGame(humanChoice) {
+// function playGame(humanChoice) { // disabled for revisiting rps lesson
 
     function playRound(humanChoice) {
-        // let humanChoice = getHumanChoice(); // this works
+        // let humanChoice = getHumanChoice(); // this works // removed when adding UI
         let computerChoice = getComputerChoice();
-        humanChoice = humanChoice.toLowerCase();
+        // let humanChoice = humanChoice.toLowerCase();
         console.log(`Human: ${humanChoice}`);
         console.log(`Computer: ${computerChoice}`);
 
@@ -45,6 +45,14 @@ function getHumanChoice() {
 
         console.log(`My score is ${humanScore}`)
         console.log(`Computer score is ${computerScore}`)
+        humanScoreDisplay.textContent = `Your score is: ${humanScore}`;
+        computerScoreDisplay.textContent = `Computer score is: ${computerScore}`;
+
+        if (humanScore == 5) {
+            winnerDisplay.textContent = "You win!";
+        } else if (computerScore == 5) {
+            winnerDisplay.textContent = "Computer wins!";
+        }
     }   
 
     let humanScore = 0;
@@ -57,14 +65,25 @@ const game = document.querySelector("div");
 const paperBtn = document.createElement("button");
 const rockBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
+const humanScoreDisplay = document.createElement("div");
+const computerScoreDisplay = document.createElement("div");
+const winnerDisplay = document.createElement("div");
 
-game.appendChild(paperBtn);
-game.appendChild(rockBtn);
+humanScoreDisplay.textContent = `Your score is: ${humanScore}`
+computerScoreDisplay.textContent = `Computer score is: ${computerScore}`
+
+game.appendChild(paperBtn);   
+game.appendChild(rockBtn); 
 game.appendChild(scissorsBtn);
+game.appendChild(humanScoreDisplay);
+game.appendChild(computerScoreDisplay);
+game.appendChild(winnerDisplay);
 
 paperBtn.textContent = "Paper";
 rockBtn.textContent = "Rock";
 scissorsBtn.textContent = "Scissors";
+// humanScoreDisplay.textContent = `Your score is: ${humanScore}`;
+// computerScoreDisplay.textContent = `Computer score is: ${computerScore}`;
 
 paperBtn.addEventListener("click", () => {
     playRound("paper");
